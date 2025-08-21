@@ -10,8 +10,13 @@ jobs:
       with:
         fetch-depth: 0
         
+    - uses: actions/setup-java@v3
+      with:
+        java-version: '11'
+        distribution: 'adopt'
+        
     - name: Package
-      run: mvn package
+      run: mvn -B package
 
   publish:
     runs-on: ubuntu-latest
