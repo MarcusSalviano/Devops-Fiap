@@ -10,8 +10,7 @@ jobs:
     - uses: actions/setup-java@v3
       with:
         java-version: '11'
-        distribution: 'adopt'
-        
+        distribution: 'adopt'        
     - name: Package
       run: mvn -B package
 
@@ -27,8 +26,8 @@ jobs:
       with:
         java-version: '11'
         distribution: 'adopt'
-        package: '*.jar'
-    - name: Publish package
+        package: '*.jar'        
+    - name: Publish Package
       run: mvn -B deploy -DaltDeploymentRepository=local::default::file:./target/repo
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
