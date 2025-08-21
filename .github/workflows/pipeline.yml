@@ -26,7 +26,6 @@ jobs:
       with:
         java-version: '11'
         distribution: 'adopt'
-        package: '*.jar'        
     - name: Publish Package
       run: mvn -B deploy -DaltDeploymentRepository=local::default::file:./target/repo
       env:
